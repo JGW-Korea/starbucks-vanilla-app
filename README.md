@@ -1,13 +1,3 @@
-# Project Name
+# ☕️ STARBUCKS
 
-## Description
-
-A brief description of what this project does and who it's for.
-
-## Installation
-
-Steps on how to install the project.
-
-## Usage
-
-Instructions on how to use the project.
+스타벅스 랜딩 페이지(홈페이지) 예제
