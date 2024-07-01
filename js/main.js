@@ -1,18 +1,28 @@
-const searchEl = document.querySelector(".search");
+// Header Search 영역 동작 제어 코드
+const searchElement = document.querySelector(".search");
 
-// document는 현재 문서의 DOM 트리에서 해당 값을 찾지만, searchEl과 같이 해당 태그 위치의 DOM Tree의 하위 후손을 선택할 수 있다.
-const searchInputEl = searchEl.querySelector("input");
+// document는 현재 문서의 DOM 트리에서 해당 값을 찾지만, searchElement과 같이 해당 태그 위치의 DOM Tree의 하위 후손을 선택할 수 있다.
+const searchInputElemenet = searchElement.querySelector("input");
 
-searchEl.addEventListener("click", () => {
-  searchInputEl.focus();
+searchElement.addEventListener("click", () => {
+  searchInputElemenet.focus();
 });
 
-searchInputEl.addEventListener("focus", () => {
-  searchEl.classList.add("focused");
-  searchInputEl.setAttribute("placeholder", "통합 검색");
+searchInputElemenet.addEventListener("focus", () => {
+  searchElement.classList.add("focused");
+  searchInputElemenet.setAttribute("placeholder", "통합 검색");
 });
 
-searchInputEl.addEventListener("blur", () => {
-  searchEl.classList.remove("focused");
-  searchInputEl.setAttribute("placeholder", "");
+searchInputElemenet.addEventListener("blur", () => {
+  searchElement.classList.remove("focused");
+  searchInputElemenet.setAttribute("placeholder", "");
+});
+
+// Header Badges 영역 동작 제어 코드
+const badgesElement = document.querySelector("header .badges");
+
+// docuement -> HTML 문서 자체의 요소들의 DOM Tree
+// Window -> 프로젝트가 나타나고 있는 브라우저 탭을 의미한다.
+window.addEventListener("scroll", () => {
+  console.log("scroll!");
 });
