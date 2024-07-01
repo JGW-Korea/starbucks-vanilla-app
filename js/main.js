@@ -23,6 +23,24 @@ const badgesElement = document.querySelector("header .badges");
 
 // docuement -> HTML 문서 자체의 요소들의 DOM Tree
 // Window -> 프로젝트가 나타나고 있는 브라우저 탭을 의미한다.
-window.addEventListener("scroll", () => {
-  console.log("scroll!");
-});
+
+// _.thottle(콜백 함수, 시간(밀리초))
+window.addEventListener(
+  "scroll",
+  _.throttle(() => {
+    if (window.scrollY > 500) {
+      // 배지 숨기기
+      // gsap.to(요소, 시간, 옵션(객체 타입))
+      gsap.to(badgesElement, 0.6, {
+        opacity: 0,
+        display: "none",
+      });
+    } else {
+      // 배지 보이기
+      gsap.to(badgesElement, 0.6, {
+        opacity: 1,
+        display: "block",
+      });
+    }
+  }, 300)
+);
