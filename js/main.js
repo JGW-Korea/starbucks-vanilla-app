@@ -44,3 +44,13 @@ window.addEventListener(
     }
   }, 300)
 );
+
+// Visual Section 영역 Fade-in 효과 지정
+const fadeElements = document.querySelectorAll(".visual .fade-in");
+
+fadeElements.forEach((element, index) => {
+  gsap.to(element, 1, {
+    delay: (index + 1) * 0.7, // GSAP 라이브러리에서 제공되는 딜레이 시간 옵션
+    opacity: 1,
+  });
+});
