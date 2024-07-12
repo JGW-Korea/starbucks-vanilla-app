@@ -77,7 +77,7 @@ new Swiper('.promotion .swiper', {
   },
 
   navigation: {
-    prevEl: '.promtion .swiper-button-prev',
-    nextEl: '.promtion .swiper-button-next',
+    nextEl: '.promotion .swiper-button-next',
+    prevEl: '.promotion .swiper-button-prev',
   }
 });
