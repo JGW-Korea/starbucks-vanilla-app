@@ -340,6 +340,7 @@ header .badges .badge {
 
 /* Notice Section 영역 */
 .notice {
+  overflow: hidden;
 }
 
 .notice .notice-line {
@@ -443,6 +444,12 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+.notice .promotion.hide {
+  height: 0;
 }
 
 .notice .promotion .swiper {
@@ -456,7 +463,7 @@ header .badges .badge {
 
 .notice .promotion .swiper-slide {
   opacity: 0.5;
-  transition: opacity 1s;
+  transition: opacity .4s;
   position: relative;;
 }
 

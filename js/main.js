@@ -81,3 +81,23 @@ new Swiper('.promotion .swiper', {
     prevEl: '.promotion .swiper-button-prev',
   }
 });
+
+const promotionElement = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.notice .toggle-promtion');
+
+let isHidePromtion = false; // promotion이 출력되고 있는지 표현하는 상태 변수
+
+// Toggle 버튼을 클릭할 경우 promtion의 상태를 변화시킨다.
+promotionToggleBtn.addEventListener('click', () => {
+  
+  isHidePromtion = !isHidePromtion;
+
+  // Promotion 숨김, 보임 처리를 해준다.
+  if(isHidePromtion) {
+    promotionElement.classList.add('hide');
+  } else {
+    promotionElement.classList.remove('hide');
+  }
+
+
+});
