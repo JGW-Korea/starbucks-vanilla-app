@@ -541,3 +541,52 @@ header .badges .badge {
   background-color: #333;
   color: #fff;
 }
+
+.rewards {
+  position: relative;
+}
+
+.rewards .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rewards .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.rewards .inner {
+  background-image: url('../images/rewards.jpg');
+  height: 241px;
+}
+
+.rewards .inner .btn-group {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+}
+
+.rewards .inner .btn-group .sign-up {
+  margin-right: 10px;
+}
+
+.rewards .inner .btn-group .sign-in {
+  width: 110px;
+}
+
+.rewards .inner .btn-group .gift {
+  margin-top: 10px;
+  flex-grow: 1;
+}
