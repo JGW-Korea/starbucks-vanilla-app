@@ -49,6 +49,7 @@ window.addEventListener(
 const fadeElements = document.querySelectorAll(".visual .fade-in");
 
 fadeElements.forEach((element, index) => {
+  // gsap 애니메이션 처리 메서드 to(요소, 시간, 옵션)
   gsap.to(element, 1, {
     delay: (index + 1) * 0.7, // GSAP 라이브러리에서 제공되는 딜레이 시간 옵션
     opacity: 1,
@@ -56,48 +57,64 @@ fadeElements.forEach((element, index) => {
 });
 
 // new Swiper( 'CSS 선택자', 옵션(Object) )
-new Swiper('.notice-line .swiper', {
-  direction: 'vertical',
+new Swiper(".notice-line .swiper", {
+  direction: "vertical",
   autoplay: true,
   loop: true,
 });
 
-new Swiper('.promotion .swiper', {
+new Swiper(".promotion .swiper", {
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
   spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true,
   loop: true,
-  autoplay: { // 자동 재생 기능도 옵션을 줄 수 있음
+  autoplay: {
+    // 자동 재생 기능도 옵션을 줄 수 있음
     delay: 5000,
   },
 
   pagination: {
-    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    el: ".promotion .swiper-pagination", // 페이지 번호 요소 선택자
     clickable: true, // 사용자의 페이지 번호 요소 제어 가능 여부
   },
 
   navigation: {
-    nextEl: '.promotion .swiper-button-next',
-    prevEl: '.promotion .swiper-button-prev',
-  }
+    nextEl: ".promotion .swiper-button-next",
+    prevEl: ".promotion .swiper-button-prev",
+  },
 });
 
-const promotionElement = document.querySelector('.promotion');
-const promotionToggleBtn = document.querySelector('.notice .toggle-promtion');
+const promotionElement = document.querySelector(".promotion");
+const promotionToggleBtn = document.querySelector(".notice .toggle-promtion");
 
 let isHidePromtion = false; // promotion이 출력되고 있는지 표현하는 상태 변수
 
 // Toggle 버튼을 클릭할 경우 promtion의 상태를 변화시킨다.
-promotionToggleBtn.addEventListener('click', () => {
-  
+promotionToggleBtn.addEventListener("click", () => {
   isHidePromtion = !isHidePromtion;
 
   // Promotion 숨김, 보임 처리를 해준다.
-  if(isHidePromtion) {
-    promotionElement.classList.add('hide');
+  if (isHidePromtion) {
+    promotionElement.classList.add("hide");
   } else {
-    promotionElement.classList.remove('hide');
+    promotionElement.classList.remove("hide");
   }
-
-
 });
+
+function random(min, max) {
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2));
+}
+
+function floatingObject(selector, delay, size) {
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    repeat: -1,
+    yoyo: true,
+    ease: Power1.easeInOut,
+    delay: random(0, delay),
+  });
+}
+
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);

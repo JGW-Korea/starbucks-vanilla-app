@@ -463,8 +463,8 @@ header .badges .badge {
 
 .notice .promotion .swiper-slide {
   opacity: 0.5;
-  transition: opacity .4s;
-  position: relative;;
+  transition: opacity 0.4s;
+  position: relative;
 }
 
 .notice .promotion .swiper-slide.swiper-slide-active {
@@ -486,7 +486,7 @@ header .badges .badge {
 }
 
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
-  background-image: url('../images/promotion_slide_pager.png');
+  background-image: url("../images/promotion_slide_pager.png");
   width: 12px;
   height: 12px;
   margin-right: 6px;
@@ -498,8 +498,11 @@ header .badges .badge {
   margin-right: 0;
 }
 
-.notice .promotion .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-image: url('../images/promotion_slide_pager_on.png');
+.notice
+  .promotion
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
 }
 
 .notice .promotion .swiper-button-prev,
@@ -517,7 +520,7 @@ header .badges .badge {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .4s;
+  transition: 0.4s;
   color: #333;
 }
 
@@ -533,7 +536,7 @@ header .badges .badge {
 
 .notice .promotion .swiper-button-prev::after,
 .notice .promotion .swiper-button-next::after {
-  content: '';
+  content: "";
 }
 
 .notice .promotion .swiper-button-prev:hover,
@@ -565,7 +568,7 @@ header .badges .badge {
 }
 
 .rewards .inner {
-  background-image: url('../images/rewards.jpg');
+  background-image: url("../images/rewards.jpg");
   height: 241px;
 }
 
@@ -609,15 +612,14 @@ header .badges .badge {
 }
 
 .youtube .youtube__area::before {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   padding-top: 56.25%;
 }
 
-
 .youtube .youtube__cover {
-  background-image: url('../images/video_cover_pattern.png');
+  background-image: url("../images/video_cover_pattern.png");
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
@@ -626,11 +628,32 @@ header .badges .badge {
   height: 100%;
 }
 
-
 .youtube .youtube__area #player {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.youtube .inner {
+  height: 700px;
+}
+
+.youtube .inner .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+.youtube .inner .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+
+.youtube .inner .floating3 {
+  position: absolute;
+  bottom: -200px;
+  right: 0;
 }
