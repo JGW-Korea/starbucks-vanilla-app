@@ -101,6 +101,7 @@ promotionToggleBtn.addEventListener("click", () => {
   }
 });
 
+// Delay Random 값을 지정해주는 함수
 function random(min, max) {
   return parseFloat((Math.random() * (max - min) + min).toFixed(2));
 }
