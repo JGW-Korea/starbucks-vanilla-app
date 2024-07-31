@@ -735,3 +735,58 @@ header .badges .badge {
 .pick-your-favorite .inner .text-group .description {
   margin-bottom: 40px;
 }
+
+/* Reserve Store */
+.reserve-store {
+  background-image: url("../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.reserve-store .inner {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-store .inner .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px;
+}
+
+.reserve-store .inner .medal .front,
+.reserve-store .inner .medal .back {
+  width: 334px;
+  height: 334px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+
+.reserve-store .inner .medal .front {
+  transform: rotateY(0deg);
+}
+
+.reserve-store .inner .medal:hover .front {
+  transform: rotateY(180deg);
+}
+
+.reserve-store .inner .medal .back {
+  transform: rotateY(-180deg);
+}
+
+.reserve-store .inner .medal:hover .back {
+  transform: rotateY(0deg);
+}
+
+.reserve-store .inner .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
