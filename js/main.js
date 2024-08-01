@@ -123,11 +123,12 @@ floatingObject(".floating3", 1.5, 20);
 // ScrollMagic 라이브러리 적용
 const spyElements = document.querySelectorAll("section.scroll-spy");
 
-spyElements.forEach((element) => {
+spyElements.forEach(function (spyEl) {
   new ScrollMagic.Scene({
-    triggerElement: element, // 보여짐의 여부를 감시할 요소를 지정
-    triggerHook: 0.8, // 감시하고 있는 요소가 뷰포트의 특정 지점에서 감시되었다는 것을 판단하는 옵션(0: 시작 지점 ~ 1: 끝 지점)
+    // 감시할 장면(Scene)을 추가
+    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.8, // 화면의 80% 지점에서 보여짐 여부 감시
   })
-    .setClassToggle()
-    .addTo();
+    .setClassToggle(spyEl, "show") // 요소가 화면에 보이면 show 클래스 추가
+    .addTo(new ScrollMagic.Controller()); // 컨트롤러에 장면을 할당(필수!)
 });
