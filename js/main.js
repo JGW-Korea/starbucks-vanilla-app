@@ -20,6 +20,7 @@ searchInputElemenet.addEventListener("blur", () => {
 
 // Header Badges 영역 동작 제어 코드
 const badgesElement = document.querySelector("header .badges");
+const toTopElement = document.querySelector("#to-top");
 
 // docuement -> HTML 문서 자체의 요소들의 DOM Tree
 // Window -> 프로젝트가 나타나고 있는 브라우저 탭을 의미한다.
@@ -30,10 +31,15 @@ window.addEventListener(
   _.throttle(() => {
     if (window.scrollY > 500) {
       // 배지 숨기기
-      // gsap.to(요소, 시간, 옵션(객체 타입))
+      // gsap.to(선택자(요소), 시간, CSS 스타일 옵션(객체 타입))
       gsap.to(badgesElement, 0.6, {
         opacity: 0,
         display: "none",
+      });
+
+      // 페이지 상단 버튼 보이기
+      gsap.to(toTopElement, 0.6, {
+        x: 0,
       });
     } else {
       // 배지 보이기
@@ -41,9 +47,20 @@ window.addEventListener(
         opacity: 1,
         display: "block",
       });
+
+      // 페이지 상단 버튼 숨기기
+      gsap.to(toTopElement, 0.6, {
+        x: 100,
+      });
     }
   }, 300)
 );
+
+toTopElement.addEventListener("click", () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 // Visual Section 영역 Fade-in 효과 지정
 const fadeElements = document.querySelectorAll(".visual .fade-in");
